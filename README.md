@@ -1,12 +1,10 @@
 # LED Module for [Chorus RF Laptimer](https://github.com/voroshkov/Chorus-RF-Laptimer)
 
-<img src="docs/img/logo.png" align="left" alt="Logo" width="200"/>
+This module is an add-in hardware for the Chorus Laptimer device so it won't work on its own.
 
-This module allows you to light up the moment when a racing drone passes the finish gate. Each VTX channel has its own color, so spectators can easily see which pilot makes the lap.
+The module allows you to light up the moment when a racing drone passes the finish gate. Each VTX channel has its own color, so spectators can easily see which pilot makes the lap.
 
-The module is an add-in hardware for the Chorus Laptimer device so it won't work on its own.
-
-NOTE: This is rather an exemplary implementation than a finished project. Feel free to rework it to power your own Chorus add-ins.
+**NOTE: This is rather an exemplary implementation than a finished project. Feel free to rework it to power your own Chorus add-ins.**
 
 ## Contents
 
@@ -39,7 +37,7 @@ NOTE: This is rather an exemplary implementation than a finished project. Feel f
 The module listens to the UART data traffic from Chorus nodes and therefore "knows" when a heat is started/finished and when any node detects a new lap. So whenever a new lap is detected in the race mode, the LEDs are lit with a color corresponding to the number of the Chorus node which reported the lap.
 
 See it in action in this YouTube video:
-[![Chorus LED Module Video](https://img.youtube.com/vi/R56wP4q2Wds/5.jpg)](https://youtu.be/R56wP4q2Wds)
+[![Chorus LED Module Video](https://img.youtube.com/vi/R56wP4q2Wds/0.jpg)](https://youtu.be/R56wP4q2Wds)
 
 <a name="hardware"></a>
 ## Hardware
@@ -66,7 +64,9 @@ Comments:
 <a name="attaching-to-chorus"></a>
 ### Attaching to Chorus
 Detach the Bluetooth module from your Chorus device and plug it into the J2 outlet of the LED module. Then plug the LED module into the outlet of the last Chorus node.
-Schematically:
+
+Schematically it should look like this:
+
 N1 -> N2 -> ... Nn -> **LED_module** -> Bluetooth Dongle
 
 <a name="software"></a>
