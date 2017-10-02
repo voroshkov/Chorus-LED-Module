@@ -37,6 +37,7 @@ The module allows you to light up the moment when a racing drone passes the fini
 The module listens to the UART data traffic from Chorus nodes and therefore "knows" when a heat is started/finished and when any node detects a new lap. So whenever a new lap is detected in the race mode, the LEDs are lit with a color corresponding to the number of the Chorus node which reported the lap.
 
 See it in action in this YouTube video:
+
 [![Chorus LED Module Video](https://img.youtube.com/vi/R56wP4q2Wds/0.jpg)](https://youtu.be/R56wP4q2Wds)
 
 <a name="hardware"></a>
@@ -48,7 +49,7 @@ See it in action in this YouTube video:
  - WS2812b LED strip (matrix/ring/whatever else)
  - Separate 5V power supply for the LED strip (for example 2-4S LiPo with 5V BEC)
  - 300-500 Ohm resistor (as recommended for WS2812b LEDs)
- - up to 1000uF capacitor (as recommended for WS2812b LEDs)
+ - 1000uF capacitor (as recommended for WS2812b LEDs)
 
 <a name="schematic"></a>
 ### Schematic
@@ -81,5 +82,9 @@ Just open each of the projects in Arduino IDE and upload to the corresponding bo
 ## Contacts
 - YouTube channel: https://www.youtube.com/user/voroshkov
 - Facebook: https://www.facebook.com/andrey.voroshkov
+
+## Featured Links
+- Chorus RF Laptimer Facebook group: https://www.facebook.com/groups/ChorusRFLaptimer/
+- Chorus RF Laptimer discussion thread @ RC Groups: https://www.rcgroups.com/forums/showthread.php?2801815
 
 Have fun ;)
