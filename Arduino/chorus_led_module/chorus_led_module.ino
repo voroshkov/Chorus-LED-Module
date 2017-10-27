@@ -159,8 +159,11 @@ void handleSerialResponse(uint8_t *responseData, uint8_t length) {
 
 // ----------------------------------------------------------------------------
 void readSerialDataChunk () {
+    // don't read anything if we have something not sent in proxyBuf
+    if (proxyBufDataSize != 0) return;
+
     uint8_t availBytes = Serial.available();
-    if (availBytes && proxyBufDataSize == 0) {
+    if (availBytes) {
         uint8_t freeBufBytes = READ_BUFFER_SIZE - readBufFilledBytes;
 
         //reset buffer if we couldn't find delimiter in its contents in prev step
@@ -173,7 +176,9 @@ void readSerialDataChunk () {
         uint8_t canGetBytes = availBytes > freeBufBytes ? freeBufBytes : availBytes;
         Serial.readBytes(&readBuf[readBufFilledBytes], canGetBytes);
         readBufFilledBytes += canGetBytes;
+    }
 
+    if (readBufFilledBytes) {
         //try finding a delimiter
         uint8_t foundIdx = 255;
         for (uint8_t i = 0; i < readBufFilledBytes; i++) {
